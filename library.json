@@ -1,0 +1,14 @@
+{
+  "name": "DHT sensor library for ESP32",
+  "keywords": "onewire, 1-wire, bus, sensor, temperature",
+  "description": "Arduino ESP32 library for DHT11, DHT22, etc Temp & Humidity Sensors. Last changes: Added example for multiple sensors usage. Added function getTempAndHumidity which returns temperature and humidity in one call. Added retry a sensor read in case a timeout occured.",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/beegee-tokyo/DHTesp.git"
+  },
+  "version": "1.0.3",
+  "frameworks": "arduino",
+  "platforms": "espressif32",
+  "license": "GPL-3.0-only"
+}
