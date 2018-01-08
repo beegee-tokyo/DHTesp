@@ -9,6 +9,8 @@ Why did I clone this library instead of forking the original repo and push the c
 When I searched through Github for DHT libraries, I found a lot of them, some of them offers additional functions, some of them only basic temperature and humidity values. I wanted to combine all interesting functions into one library. In addition, none of the DHT libraries I found were written to work without errors on the ESP32. For ESP32 (a multi core/ multi processing SOC) task switching must be disabled while reading data from the sensor.    
 Another problem I found is that many of the available libraries use the same naming (dht.h, dht.cpp), which easily leads to conflicts if different libraries are used for different platforms.    
 
+The library is tested as well on ESP8266 and should work on AVR boards as well.    
+
 Changes to the original library:
 --------
 - 2017-12-12: Renamed DHT class to DHTesp and filenames from dht.* to DHTesp.* to avoid conflicts with other libraries - beegee-tokyo, <beegee@giesecke.tk>.    
@@ -20,6 +22,7 @@ Changes to the original library:
 - 2018-01-02: Added example for multiple sensors usage.    
 - 2018-01-03: Added function getTempAndHumidity which returns temperature and humidity in one call.    
 - 2018-01-03: Added retry in case the reading from the sensor fails with a timeout.    
+- 2018-01-08: Added ESP8266 (and probably AVR) compatibility.    
 
 Features
 --------
@@ -60,7 +63,7 @@ See example _`DHT_ESP32.ino`_ or _`DHT_Test.ino`_
 _**`TempAndHumidity getTempAndHumidity();`**_    
 - Get the temperature and humidity from the sensor     
 Either one of _`getTemperature()`_ or  _`getHumidity()`_ or  _`getTempAndHumidity()`_ initiates reading a value from the sensor if the last reading was older than the minimal refresh time of the sensor.    
-Return value is a struct of type _`getTempAndHumidity`_ with temperature and humidity as float values.
+Return value is a struct of type _`TempAndHumidity`_ with temperature and humidity as float values.
 See example _`DHT_Multi.ino`_    
 
 _**`DHT_ERROR_t getStatus();`**_    

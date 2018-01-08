@@ -33,6 +33,7 @@
     2018-01-02: Added example for multiple sensors usage.
     2018-01-03: Added function getTempAndHumidity which returns temperature and humidity in one call.
     2018-01-03: Added retry in case the reading from the sensor fails with a timeout.
+    2018-01-08: Added ESP8266 (and probably AVR) compatibility.
 ******************************************************************/
 
 #include "DHTesp.h"
@@ -199,6 +200,8 @@ void DHTesp::readSensor()
   // It is necessary to disable task switches during the readings
   portMUX_TYPE mux = portMUX_INITIALIZER_UNLOCKED;
   portENTER_CRITICAL(&mux);
+#else
+  cli();
 #endif
   for ( int8_t i = -3 ; i < 2 * 40; i++ ) {
     byte age;
@@ -210,6 +213,8 @@ void DHTesp::readSensor()
         error = ERROR_TIMEOUT;
 #ifdef ESP32
         portEXIT_CRITICAL(&mux);
+#else
+        sei();
 #endif
         return;
       }
@@ -239,6 +244,8 @@ void DHTesp::readSensor()
 
 #ifdef ESP32
   portEXIT_CRITICAL(&mux);
+#else
+  sei();
 #endif
 
   // Verify checksum
