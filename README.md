@@ -23,7 +23,7 @@ Changes to the original library:
 - 2018-01-03: Added function getTempAndHumidity which returns temperature and humidity in one call.    
 - 2018-01-03: Added retry in case the reading from the sensor fails with a timeout.    
 - 2018-01-08: Added ESP8266 (and probably AVR) compatibility.    
-
+- 2018-03-11: Updated DHT example    
 Features
 --------
   - Support for DHT11 and DHT22, AM2302, RHT03
