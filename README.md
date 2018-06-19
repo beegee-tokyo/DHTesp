@@ -24,6 +24,7 @@ Changes to the original library:
 - 2018-01-03: Added retry in case the reading from the sensor fails with a timeout.    
 - 2018-01-08: Added ESP8266 (and probably AVR) compatibility.    
 - 2018-03-11: Updated DHT example    
+- 2018-06-19: Updated DHT example to distinguish between ESP8266 examples and ESP32 examples    
 Features
 --------
   - Support for DHT11 and DHT22, AM2302, RHT03
@@ -46,7 +47,7 @@ _**`void setup(uint8_t pin, DHT_MODEL_t model=AUTO_DETECT);`**_
     - DHT22    
     - AM2302          Packaged DHT22    
     - RHT03           Equivalent to DHT22    
-
+- WARNING: Autodetect does not work reliable. use e.g setup(pin, DHTesp::DHT11) or e.g. setup(pin, DHTesp::RHT03) instead
 _**`void resetTimer();`**_    
 - Reset last time the sensor was read    
 

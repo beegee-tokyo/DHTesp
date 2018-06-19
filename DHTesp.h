@@ -117,7 +117,8 @@ public:
 
   TempAndHumidity values;
 
-  void setup(uint8_t pin, DHT_MODEL_t model=AUTO_DETECT);
+  // setup(dhtPin) is deprecated, auto detection is not working well on ESP32. Use setup(dhtPin, DHTesp::DHT11) instead!
+  void setup(uint8_t pin, DHT_MODEL_t model=AUTO_DETECT) __attribute__((deprecated));
   void resetTimer();
 
   float getTemperature();

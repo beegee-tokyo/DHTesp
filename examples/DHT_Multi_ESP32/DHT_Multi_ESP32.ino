@@ -1,7 +1,12 @@
 #include <Arduino.h>
 
-#include "ESP32Ticker.h"
+#include "Ticker.h"
 #include "DHTesp.h"
+
+#ifndef ESP32
+#pragma message(THIS EXAMPLE IS FOR ESP32 ONLY!)
+#error Select ESP32 board.
+#endif
 
 /** Initialize DHT sensor 1 */
 DHTesp dhtSensor1;

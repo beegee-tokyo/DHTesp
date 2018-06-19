@@ -1,5 +1,10 @@
 #include "DHTesp.h"
-#include "ESP32Ticker.h"
+#include "Ticker.h"
+
+#ifndef ESP32
+#pragma message(THIS EXAMPLE IS FOR ESP32 ONLY!)
+#error Select ESP32 board.
+#endif
 
 /**************************************************************/
 /* Example how to read DHT sensors from an ESP32 using multi- */

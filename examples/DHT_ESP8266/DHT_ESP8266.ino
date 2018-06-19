@@ -1,5 +1,10 @@
 #include "DHTesp.h"
 
+#ifdef ESP32
+#pragma message(THIS EXAMPLE IS FOR ESP8266 ONLY!)
+#error Select ESP8266 board.
+#endif
+
 DHTesp dht;
 
 void setup()
@@ -8,7 +13,10 @@ void setup()
   Serial.println();
   Serial.println("Status\tHumidity (%)\tTemperature (C)\t(F)\tHeatIndex (C)\t(F)");
 
-  dht.setup(17); // Connect DHT sensor to GPIO 17
+  // Autodetect is not working reliable, don't use the following line
+  // dht.setup(17);
+  // use this instead: 
+  dht.setup(17, DHTesp::DHT22); // Connect DHT sensor to GPIO 17
 }
 
 void loop()
