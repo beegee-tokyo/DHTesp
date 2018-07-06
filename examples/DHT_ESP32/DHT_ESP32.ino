@@ -161,6 +161,8 @@ void setup()
   Serial.println();
   Serial.println("DHT ESP32 example with tasks");
   initTemp();
+  // Signal end of setup() to tasks
+  tasksEnabled = true;
 }
 
 void loop() {

@@ -12,6 +12,8 @@ void setup()
   Serial.begin(115200);
   Serial.println();
   Serial.println("Status\tHumidity (%)\tTemperature (C)\t(F)\tHeatIndex (C)\t(F)");
+  String thisBoard= ARDUINO_BOARD;
+  Serial.println(thisBoard);
 
   // Autodetect is not working reliable, don't use the following line
   // dht.setup(17);

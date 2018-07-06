@@ -9,6 +9,10 @@ Why did I clone this library instead of forking the original repo and push the c
 When I searched through Github for DHT libraries, I found a lot of them, some of them offers additional functions, some of them only basic temperature and humidity values. I wanted to combine all interesting functions into one library. In addition, none of the DHT libraries I found were written to work without errors on the ESP32. For ESP32 (a multi core/ multi processing SOC) task switching must be disabled while reading data from the sensor.    
 Another problem I found is that many of the available libraries use the same naming (dht.h, dht.cpp), which easily leads to conflicts if different libraries are used for different platforms.    
 
+_**According to users, the library works as well with DHT33 and DHT44 sensors. But as I do not own these sensors, I cannot test and confirm it. However, if you want to use this sensors, you can do so by using `setup(pin, DHTesp::DHT22)` and it should work.
+Please give me feedback in the issues if you successfull use these sensors.
+Thank you**_
+
 The library is tested as well on ESP8266 and should work on AVR boards as well.    
 
 Changes to the original library:
@@ -25,6 +29,7 @@ Changes to the original library:
 - 2018-01-08: Added ESP8266 (and probably AVR) compatibility.    
 - 2018-03-11: Updated DHT example    
 - 2018-06-19: Updated DHT example to distinguish between ESP8266 examples and ESP32 examples    
+- 2018-07-06: Fixed bug in ESP32 example    
 Features
 --------
   - Support for DHT11 and DHT22, AM2302, RHT03

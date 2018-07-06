@@ -35,6 +35,8 @@
     2018-01-03: Added retry in case the reading from the sensor fails with a timeout.
     2018-01-08: Added ESP8266 (and probably AVR) compatibility.
 	2018-03-11: Updated DHT example    
+    2018-06-19: Updated DHT example to distinguish between ESP8266 examples and ESP32 examples    
+    2018-07-06: Fixed bug in ESP32 example    
 ******************************************************************/
 
 #include "DHTesp.h"
