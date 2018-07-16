@@ -25,20 +25,20 @@ toFahrenheit	KEYWORD2
 toCelsius	KEYWORD2
 computeHeatIndex	KEYWORD2
 computeDewPoint	KEYWORD2
-getComfortRatio KEYWORD2
-getNumberOfDecimalsTemperature KEYWORD2
-getLowerBoundTemperature KEYWORD2
-getUpperBoundTemperature KEYWORD2
-getNumberOfDecimalsHumidity KEYWORD2
-getLowerBoundHumidity KEYWORD2
-getUpperBoundHumidity KEYWORD2
-getComfortProfile KEYWORD2
-setComfortProfile KEYWORD2
-isTooHot KEYWORD2
-isTooHumid KEYWORD2
-isTooCold KEYWORD2
-isTooDry KEYWORD2
-computePerception KEYWORD2
+getComfortRatio	KEYWORD2
+getNumberOfDecimalsTemperature	KEYWORD2
+getLowerBoundTemperature	KEYWORD2
+getUpperBoundTemperature	KEYWORD2
+getNumberOfDecimalsHumidity	KEYWORD2
+getLowerBoundHumidity	KEYWORD2
+getUpperBoundHumidity	KEYWORD2
+getComfortProfile	KEYWORD2
+setComfortProfile	KEYWORD2
+isTooHot	KEYWORD2
+isTooHumid	KEYWORD2
+isTooCold	KEYWORD2
+isTooDry	KEYWORD2
+computePerception	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)
