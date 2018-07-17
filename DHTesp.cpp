@@ -37,6 +37,7 @@
 	2018-03-11: Updated DHT example    
     2018-06-19: Updated DHT example to distinguish between ESP8266 examples and ESP32 examples    
     2018-07-06: Fixed bug in ESP32 example    
+    2018-07-17: Use correct field separator in keywords.txt + corrected wrong deprecation
 ******************************************************************/
 
 #include "DHTesp.h"
