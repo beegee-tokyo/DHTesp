@@ -36,7 +36,8 @@
     2018-01-08: Added ESP8266 (and probably AVR) compatibility.
     2018-03-11: Updated DHT example    
     2018-06-19: Updated DHT example to distinguish between ESP8266 examples and ESP32 examples    
-    2018-07-06: Fixed bug in ESP32 example    
+    2018-07-06: Fixed bug in ESP32 example   
+    2018^07-17: Use correct field separator in keywords.txt + corrected wrong deprecation
  ******************************************************************/
 
 #ifndef dhtesp_h
@@ -121,7 +122,8 @@ public:
   TempAndHumidity values;
 
   // setup(dhtPin) is deprecated, auto detection is not working well on ESP32. Use setup(dhtPin, DHTesp::DHT11) instead!
-  void setup(uint8_t pin, DHT_MODEL_t model=AUTO_DETECT) __attribute__((deprecated));
+  void setup(uint8_t dhtPin) __attribute__((deprecated));
+  void setup(uint8_t pin, DHT_MODEL_t model=AUTO_DETECT);
   void resetTimer();
 
   float getTemperature();
