@@ -425,3 +425,23 @@ float DHTesp::getComfortRatio(ComfortState& destComfortStatus, float temperature
 
   return ratio;
 }
+
+float DHTesp::computeAbsoluteHumidity(float temperature, float percentHumidity, bool isFahrenheit) {
+  // Calculate the absolute humidity in g/m³
+  // https://carnotcycle.wordpress.com/2012/08/04/how-to-convert-relative-humidity-to-absolute-humidity/
+  if (isFahrenheit) {
+      temperature = toCelsius(temperature);
+  }
+
+  float absHumidity;
+  float absTemperature;
+  absTemperature = temperature + 273.15;
+
+  absHumidity = 6.112;
+  absHumidity *= exp((17.67 * temperature) / (243.5 + temperature));
+  absHumidity *= percentHumidity;
+  absHumidity *= 2.1674;
+  absHumidity /= absTemperature;
+
+  return absHumidity;
+}

@@ -38,6 +38,7 @@
     2018-06-19: Updated DHT example to distinguish between ESP8266 examples and ESP32 examples
     2018-07-06: Fixed bug in ESP32 example
     2018-07-17: Use correct field separator in keywords.txt + corrected wrong deprecation
+    2019-03-07: Added computeAbsoluteHumidity which returns the absolute humidity in g/m³
  ******************************************************************/
 
 #ifndef dhtesp_h
@@ -158,6 +159,7 @@ public:
   inline bool isTooCold(float temp, float humidity) {return m_comfort.isTooCold(temp, humidity);}
   inline bool isTooDry(float temp, float humidity) {return m_comfort.isTooDry(temp, humidity);}
   byte computePerception(float temperature, float percentHumidity, bool isFahrenheit=false);
+  float computeAbsoluteHumidity(float temperature, float percentHumidity, bool isFahrenheit=false);
 protected:
   void readSensor();
 
