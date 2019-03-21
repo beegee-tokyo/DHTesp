@@ -39,6 +39,7 @@ isTooHumid	KEYWORD2
 isTooCold	KEYWORD2
 isTooDry	KEYWORD2
 computePerception	KEYWORD2
+computeAbsoluteHumidity	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)

@@ -34,9 +34,9 @@
     2018-01-03: Added function getTempAndHumidity which returns temperature and humidity in one call.
     2018-01-03: Added retry in case the reading from the sensor fails with a timeout.
     2018-01-08: Added ESP8266 (and probably AVR) compatibility.
-	2018-03-11: Updated DHT example    
-    2018-06-19: Updated DHT example to distinguish between ESP8266 examples and ESP32 examples    
-    2018-07-06: Fixed bug in ESP32 example    
+    2018-03-11: Updated DHT example
+    2018-06-19: Updated DHT example to distinguish between ESP8266 examples and ESP32 examples
+    2018-07-06: Fixed bug in ESP32 example
     2018-07-17: Use correct field separator in keywords.txt + corrected wrong deprecation
 ******************************************************************/
 
@@ -370,58 +370,78 @@ byte DHTesp::computePerception(float temperature, float percentHumidity, bool is
 
 //boolean isFahrenheit: True == Fahrenheit; False == Celcius
 float DHTesp::getComfortRatio(ComfortState& destComfortStatus, float temperature, float percentHumidity, bool isFahrenheit) {
-	float ratio = 100; //100%
-	float distance = 0;
-	float kTempFactor = 3; //take into account the slope of the lines
-	float kHumidFactor = 0.1; //take into account the slope of the lines
-	uint8_t tempComfort = 0;
+  float ratio = 100; //100%
+  float distance = 0;
+  float kTempFactor = 3; //take into account the slope of the lines
+  float kHumidFactor = 0.1; //take into account the slope of the lines
+  uint8_t tempComfort = 0;
 
   if (isFahrenheit) {
     temperature = toCelsius(temperature);
   }
 
-	destComfortStatus = Comfort_OK;
+  destComfortStatus = Comfort_OK;
 
-	distance = m_comfort.distanceTooHot(temperature, percentHumidity);
-	if(distance > 0)
-	{
-		//update the comfort descriptor
-		tempComfort += (uint8_t)Comfort_TooHot;
-		//decrease the comfot ratio taking the distance into account
-		ratio -= distance * kTempFactor;
-	}
+  distance = m_comfort.distanceTooHot(temperature, percentHumidity);
+  if(distance > 0)
+  {
+    //update the comfort descriptor
+    tempComfort += (uint8_t)Comfort_TooHot;
+    //decrease the comfot ratio taking the distance into account
+    ratio -= distance * kTempFactor;
+  }
 
-	distance = m_comfort.distanceTooHumid(temperature, percentHumidity);
-	if(distance > 0)
-	{
-		//update the comfort descriptor
-		tempComfort += (uint8_t)Comfort_TooHumid;
-		//decrease the comfot ratio taking the distance into account
-		ratio -= distance * kHumidFactor;
-	}
+  distance = m_comfort.distanceTooHumid(temperature, percentHumidity);
+  if(distance > 0)
+  {
+    //update the comfort descriptor
+    tempComfort += (uint8_t)Comfort_TooHumid;
+    //decrease the comfot ratio taking the distance into account
+    ratio -= distance * kHumidFactor;
+  }
 
-	distance = m_comfort.distanceTooCold(temperature, percentHumidity);
-	if(distance > 0)
-	{
-		//update the comfort descriptor
-		tempComfort += (uint8_t)Comfort_TooCold;
-		//decrease the comfot ratio taking the distance into account
-		ratio -= distance * kTempFactor;
-	}
+  distance = m_comfort.distanceTooCold(temperature, percentHumidity);
+  if(distance > 0)
+  {
+    //update the comfort descriptor
+    tempComfort += (uint8_t)Comfort_TooCold;
+    //decrease the comfot ratio taking the distance into account
+    ratio -= distance * kTempFactor;
+  }
 
-	distance = m_comfort.distanceTooDry(temperature, percentHumidity);
-	if(distance > 0)
-	{
-		//update the comfort descriptor
-		tempComfort += (uint8_t)Comfort_TooDry;
-		//decrease the comfot ratio taking the distance into account
-		ratio -= distance * kHumidFactor;
-	}
+  distance = m_comfort.distanceTooDry(temperature, percentHumidity);
+  if(distance > 0)
+  {
+    //update the comfort descriptor
+    tempComfort += (uint8_t)Comfort_TooDry;
+    //decrease the comfot ratio taking the distance into account
+    ratio -= distance * kHumidFactor;
+  }
 
-	destComfortStatus = (ComfortState)tempComfort;
+  destComfortStatus = (ComfortState)tempComfort;
 
-	if(ratio < 0)
-		ratio = 0;
+  if(ratio < 0)
+    ratio = 0;
 
-	return ratio;
+  return ratio;
+}
+
+float DHTesp::computeAbsoluteHumidity(float temperature, float percentHumidity, bool isFahrenheit) {
+  // Calculate the absolute humidity in g/m³
+  // https://carnotcycle.wordpress.com/2012/08/04/how-to-convert-relative-humidity-to-absolute-humidity/
+  if (isFahrenheit) {
+      temperature = toCelsius(temperature);
+  }
+
+  float absHumidity;
+  float absTemperature;
+  absTemperature = temperature + 273.15;
+
+  absHumidity = 6.112;
+  absHumidity *= exp((17.67 * temperature) / (243.5 + temperature));
+  absHumidity *= percentHumidity;
+  absHumidity *= 2.1674;
+  absHumidity /= absTemperature;
+
+  return absHumidity;
 }

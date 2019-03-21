@@ -31,6 +31,7 @@ Changes to the original library:
 - 2018-06-19: Updated DHT example to distinguish between ESP8266 examples and ESP32 examples    
 - 2018-07-06: Fixed bug in ESP32 example    
 - 2018-07-17: Use correct field separator in keywords.txt    
+- 2019-03-07: Added computeAbsoluteHumidity which returns the absolute humidity in g/m³. Reference: [How to convert relative humidity to absolute humidity](https://carnotcycle.wordpress.com/2012/08/04/how-to-convert-relative-humidity-to-absolute-humidity/)    
 Features
 --------
   - Support for DHT11 and DHT22, AM2302, RHT03
@@ -117,6 +118,9 @@ _**`float computeHeatIndex(float temperature, float percentHumidity, bool isFahr
 
 _**`float computeDewPoint(float temperature, float percentHumidity, bool isFahrenheit=false);`**_    
 - Compute the dew point. Default temperature is in Centrigrade.    
+
+_**`float computeAbsoluteHumidity(float temperature, float percentHumidity, bool isFahrenheit=false);`**_    
+- Compute the absolute humidity in g/m³. Default temperature is in Centrigrade.    
 
 _**`float getComfortRatio(ComfortState& destComfStatus, float temperature, float percentHumidity, bool isFahrenheit=false);`**_    
 - Compute the comfort ratio. Default temperature is in Centrigrade. Return values:    
