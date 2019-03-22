@@ -39,6 +39,7 @@
     2018-07-06: Fixed bug in ESP32 example
     2018-07-17: Use correct field separator in keywords.txt + corrected wrong deprecation
     2019-03-07: Added computeAbsoluteHumidity which returns the absolute humidity in g/m³
+    2019-03-22: Fixed auto detection problem
  ******************************************************************/
 
 #ifndef dhtesp_h

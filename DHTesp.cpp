@@ -38,6 +38,8 @@
     2018-06-19: Updated DHT example to distinguish between ESP8266 examples and ESP32 examples
     2018-07-06: Fixed bug in ESP32 example
     2018-07-17: Use correct field separator in keywords.txt + corrected wrong deprecation
+    2019-03-07: Added computeAbsoluteHumidity which returns the absolute humidity in g/m³
+    2019-03-22: Fixed auto detection problem
 ******************************************************************/
 
 #include "DHTesp.h"
@@ -188,7 +190,7 @@ void DHTesp::readSensor()
   }
   else {
     // This will fail for a DHT11 - that's how we can detect such a device
-    delayMicroseconds(800);
+    delay(2);
   }
 
   pinMode(pin, INPUT);
