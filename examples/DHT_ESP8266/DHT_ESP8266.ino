@@ -39,5 +39,6 @@ void loop()
   Serial.print(dht.computeHeatIndex(temperature, humidity, false), 1);
   Serial.print("\t\t");
   Serial.println(dht.computeHeatIndex(dht.toFahrenheit(temperature), humidity, true), 1);
+  Delay(2000);
 }
 
