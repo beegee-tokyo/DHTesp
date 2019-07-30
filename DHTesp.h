@@ -40,6 +40,7 @@
     2018-07-17: Use correct field separator in keywords.txt + corrected wrong deprecation
     2019-03-07: Added computeAbsoluteHumidity which returns the absolute humidity in g/m³
     2019-03-22: Fixed auto detection problem
+    2019-07-26: Added getPin function
  ******************************************************************/
 
 #ifndef dhtesp_h
@@ -161,6 +162,7 @@ public:
   inline bool isTooDry(float temp, float humidity) {return m_comfort.isTooDry(temp, humidity);}
   byte computePerception(float temperature, float percentHumidity, bool isFahrenheit=false);
   float computeAbsoluteHumidity(float temperature, float percentHumidity, bool isFahrenheit=false);
+  uint8_t getPin() { return pin; }
 protected:
   void readSensor();
 
