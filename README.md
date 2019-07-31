@@ -33,6 +33,8 @@ Changes to the original library:
 - 2018-07-17: Use correct field separator in keywords.txt    
 - 2019-03-07: Added computeAbsoluteHumidity which returns the absolute humidity in g/m³. Reference: [How to convert relative humidity to absolute humidity](https://carnotcycle.wordpress.com/2012/08/04/how-to-convert-relative-humidity-to-absolute-humidity/) kudos to [Wurstnase](https://github.com/Wurstnase)    
 - 2019-03-22: Fixed auto detection problem    
+- 2019-07-31: Make getPin() public, Updated ESP8266 example        
+
 Features
 --------
   - Support for DHT11 and DHT22, AM2302, RHT03
@@ -144,6 +146,9 @@ _**`byte computePerception(float temperature, float percentHumidity, bool isFahr
 5 -> Quite uncomfortable    
 6 -> Very uncomfortable    
 7 -> Severe uncomfortable    
+
+_**`uint8_t getPin(void);`**_    
+- Returns the assigned GPIO for this instance. Usefull when connecting multiple sensors         
 
 Usage
 -----
