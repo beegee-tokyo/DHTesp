@@ -289,8 +289,8 @@ void DHTesp::readSensor()
 
 	if (model == DHT11)
 	{
-		humidity = rawHumidity >> 8;
-		temperature = rawTemperature >> 8;
+                humidity = (rawHumidity >> 8) + ((rawHumidity & 0x00FF) * 0.1);
+                temperature = (rawTemperature >> 8) + ((rawTemperature & 0x00FF) * 0.1) ;
 	}
 	else
 	{
