@@ -243,6 +243,7 @@ void DHTesp::readSensor()
 #endif
 				return;
 			}
+			delay(5);
 		} while (digitalRead(pin) == (i & 1) ? HIGH : LOW);
 
 		if (i >= 0 && (i & 1))
