@@ -1,12 +1,12 @@
 {
 	"name": "DHT sensor library for ESPx",
 	"keywords": "onewire, 1-wire, bus, sensor, temperature",
-	"description": "Arduino ESP library for DHT11, DHT22, etc Temp & Humidity Sensors. Last changes: Using noInterrupts() & interrupts() instead of cli and sei",
+	"description": "Arduino ESP library for DHT11, DHT22, etc Temp & Humidity Sensors. Last changes: Reduce CPU usage and add decimal part for DHT11",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/beegee-tokyo/DHTesp.git"
 	},
-	"version": "1.15",
+	"version": "1.16",
 	"frameworks": "arduino",
 	"platforms": [
 		"espressif8266",

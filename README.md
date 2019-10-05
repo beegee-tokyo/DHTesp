@@ -34,6 +34,8 @@ Changes to the original library:
 - 2019-03-07: Added computeAbsoluteHumidity which returns the absolute humidity in g/m³. Reference: [How to convert relative humidity to absolute humidity](https://carnotcycle.wordpress.com/2012/08/04/how-to-convert-relative-humidity-to-absolute-humidity/) kudos to [Wurstnase](https://github.com/Wurstnase)    
 - 2019-03-22: Fixed auto detection problem    
 - 2019-07-31: Make getPin() public, Updated ESP8266 example        
+- 2019-10-01: Using noInterrupts() & interrupts() instead of cli and sei
+- 2019-10-05: Reduce CPU usage and add decimal part for DHT11 (thanks to Swiftyhu)
 
 Features
 --------
