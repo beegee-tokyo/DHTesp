@@ -243,7 +243,6 @@ void DHTesp::readSensor()
 #endif
 				return;
 			}
-			delay(5);
 		} while (digitalRead(pin) == (i & 1) ? HIGH : LOW);
 
 		if (i >= 0 && (i & 1))
@@ -289,8 +288,8 @@ void DHTesp::readSensor()
 
 	if (model == DHT11)
 	{
-                humidity = (rawHumidity >> 8) + ((rawHumidity & 0x00FF) * 0.1);
-                temperature = (rawTemperature >> 8) + ((rawTemperature & 0x00FF) * 0.1) ;
+		humidity = (rawHumidity >> 8) + ((rawHumidity & 0x00FF) * 0.1);
+		temperature = (rawTemperature >> 8) + ((rawTemperature & 0x00FF) * 0.1);
 	}
 	else
 	{

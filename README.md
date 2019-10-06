@@ -36,6 +36,7 @@ Changes to the original library:
 - 2019-07-31: Make getPin() public, Updated ESP8266 example        
 - 2019-10-01: Using noInterrupts() & interrupts() instead of cli and sei
 - 2019-10-05: Reduce CPU usage and add decimal part for DHT11 (thanks to Swiftyhu)
+- 2019-10-06: Back to working version by removing the last commit
 
 Features
 --------
