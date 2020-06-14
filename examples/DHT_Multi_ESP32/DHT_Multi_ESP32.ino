@@ -36,7 +36,7 @@ TempAndHumidity sensor3Data;
 /* Flag if main loop is running */
 bool tasksEnabled = false;
 
-/**
+
 
 /**
  * Task to reads temperature from DHT11 sensor
