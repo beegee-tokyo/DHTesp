@@ -1,4 +1,4 @@
-DHTesp
+DHTesp [![Build Status](https://travis-ci.com/beegee-tokyo/DHTesp.svg?branch=master)](https://travis-ci.com/beegee-tokyo/DHTesp)
 ===
 
 An Arduino library for reading the DHT family of temperature and humidity sensors.    
