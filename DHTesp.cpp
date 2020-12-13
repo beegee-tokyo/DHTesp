@@ -71,7 +71,7 @@ void DHTesp::setup(uint8_t pin, DHT_MODEL_t model)
 	//The for points used are(from top left, clock wise)
 	//A(30%, 30*C) B(70%, 26.2*C) C(70.1%, 20.55*C) D(30.1%, 22.22*C)
 	//On the X axis we have the rel humidity in % and on the Y axis the temperature in *C
-
+/*
 	//Too hot line AB
 	m_comfort.m_tooHot_m = -0.095;
 	m_comfort.m_tooHot_b = 32.85;
@@ -84,6 +84,7 @@ void DHTesp::setup(uint8_t pin, DHT_MODEL_t model)
 	//Too dry line AD
 	m_comfort.m_tooDry_m = -77.8;
 	m_comfort.m_tooDry_b = 2364;
+*/	
 }
 
 void DHTesp::resetTimer()
@@ -305,6 +306,7 @@ void DHTesp::readSensor()
 	error = ERROR_NONE;
 }
 
+/*
 //boolean isFahrenheit: True == Fahrenheit; False == Celcius
 float DHTesp::computeHeatIndex(float temperature, float percentHumidity, bool isFahrenheit)
 {
@@ -497,3 +499,4 @@ float DHTesp::computeAbsoluteHumidity(float temperature, float percentHumidity, 
 
 	return absHumidity;
 }
+*/

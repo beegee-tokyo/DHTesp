@@ -53,6 +53,7 @@
 #endif
 
 // Reference: http://epb.apogee.net/res/refcomf.asp (References invalid)
+/*
 enum ComfortState {
   Comfort_OK = 0,
   Comfort_TooHot = 1,
@@ -76,12 +77,13 @@ enum PerceptionState {
   Perception_VeryUnComfy = 6,
   Perception_SevereUncomfy = 7
 };
-
+*/
 struct TempAndHumidity {
   float temperature;
   float humidity;
 };
 
+/*
 struct ComfortProfile
 {
   //Represent the 4 line equations:
@@ -101,7 +103,7 @@ struct ComfortProfile
   inline float distanceTooCold(float temp, float humidity) {return (humidity * m_tooCold_m + m_tooHCold_b) - temp;}
   inline float distanceTooDry(float temp, float humidity) {return (humidity * m_tooDry_m + m_tooDry_b) - temp;}
 };
-
+*/
 class DHTesp
 {
 public:
@@ -151,7 +153,7 @@ public:
   static float toFahrenheit(float fromCelcius) { return 1.8 * fromCelcius + 32.0; };
   static float toCelsius(float fromFahrenheit) { return (fromFahrenheit - 32.0) / 1.8; };
 
-  float computeHeatIndex(float temperature, float percentHumidity, bool isFahrenheit=false);
+  /*float computeHeatIndex(float temperature, float percentHumidity, bool isFahrenheit=false);
   float computeDewPoint(float temperature, float percentHumidity, bool isFahrenheit=false);
   float getComfortRatio(ComfortState& destComfStatus, float temperature, float percentHumidity, bool isFahrenheit=false);
   ComfortProfile getComfortProfile() {return m_comfort;}
@@ -162,6 +164,7 @@ public:
   inline bool isTooDry(float temp, float humidity) {return m_comfort.isTooDry(temp, humidity);}
   byte computePerception(float temperature, float percentHumidity, bool isFahrenheit=false);
   float computeAbsoluteHumidity(float temperature, float percentHumidity, bool isFahrenheit=false);
+  */
   uint8_t getPin() { return pin; }
 protected:
   void readSensor();
@@ -175,7 +178,9 @@ private:
   DHT_MODEL_t model;
   DHT_ERROR_t error;
   unsigned long lastReadTime;
+/*  
   ComfortProfile m_comfort;
+*/  
 };
 
 #endif /*dhtesp_h*/
