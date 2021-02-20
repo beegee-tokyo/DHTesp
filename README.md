@@ -1,6 +1,6 @@
 DHTesp [![Build Status](https://github.com/beegee-tokyo/DHTesp/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/beegee-tokyo/DHTesp/actions)
-<!-- [![Build Status](https://travis-ci.com/beegee-tokyo/DHTesp.svg?branch=master)](https://travis-ci.com/beegee-tokyo/DHTesp) -->
 ===
+<!-- [![Build Status](https://travis-ci.com/beegee-tokyo/DHTesp.svg?branch=master)](https://travis-ci.com/beegee-tokyo/DHTesp) -->
 
 An Arduino library for reading the DHT family of temperature and humidity sensors.    
 Forked from [arduino-DHT](https://github.com/markruys/arduino-DHT)     
