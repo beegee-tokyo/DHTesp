@@ -1,4 +1,4 @@
-DHTesp [![Build Status](https://github.com/beegee-tokyo/DHTesp/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/beegee-tokyo/DHTesp/actions)[![Documentation](https://github.com/adafruit/ci-arduino/blob/master/assets/doxygen_badge.svg)](https://beegee-tokyo.github.io/DHTesp/)
+DHTesp [![Build Status](https://github.com/beegee-tokyo/DHTesp/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/beegee-tokyo/DHTesp/actions)
 <!-- [![Build Status](https://travis-ci.com/beegee-tokyo/DHTesp.svg?branch=master)](https://travis-ci.com/beegee-tokyo/DHTesp) -->
 ===
 
