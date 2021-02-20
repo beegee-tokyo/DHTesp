@@ -1,5 +1,5 @@
-#include "DHTesp.h"
-#include "Ticker.h"
+#include "DHTesp.h" // Click here to get the library: http://librarymanager/All#DHTesp
+#include <Ticker.h>
 
 #ifndef ESP32
 #pragma message(THIS EXAMPLE IS FOR ESP32 ONLY!)
@@ -9,11 +9,8 @@
 /**************************************************************/
 /* Example how to read DHT sensors from an ESP32 using multi- */
 /* tasking.                                                   */
-/* This example depends on the ESP32Ticker library to wake up */
+/* This example depends on the Ticker library to wake up      */
 /* the task every 20 seconds                                  */
-/* Please install Ticker-esp32 library first                  */
-/* bertmelis/Ticker-esp32                                     */
-/* https://github.com/bertmelis/Ticker-esp32                  */
 /**************************************************************/
 
 DHTesp dht;
