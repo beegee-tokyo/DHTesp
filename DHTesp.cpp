@@ -292,7 +292,7 @@ void DHTesp::readSensor()
 	error = ERROR_NONE;
 }
 
-//boolean isFahrenheit: True == Fahrenheit; False == Celcius
+//boolean isFahrenheit: True == Fahrenheit; False == Celsius
 float DHTesp::computeHeatIndex(float temperature, float percentHumidity, bool isFahrenheit)
 {
 	// Using both Rothfusz and Steadman's equations
@@ -328,7 +328,7 @@ float DHTesp::computeHeatIndex(float temperature, float percentHumidity, bool is
 	return isFahrenheit ? hi : toCelsius(hi);
 }
 
-//boolean isFahrenheit: True == Fahrenheit; False == Celcius
+//boolean isFahrenheit: True == Fahrenheit; False == Celsius
 float DHTesp::computeDewPoint(float temperature, float percentHumidity, bool isFahrenheit)
 {
 	// reference: http://wahiduddin.net/calc/density_algorithms.htm
@@ -348,7 +348,7 @@ float DHTesp::computeDewPoint(float temperature, float percentHumidity, bool isF
 	return isFahrenheit ? toFahrenheit(Td) : Td;
 }
 
-//boolean isFahrenheit: True == Fahrenheit; False == Celcius
+//boolean isFahrenheit: True == Fahrenheit; False == Celsius
 byte DHTesp::computePerception(float temperature, float percentHumidity, bool isFahrenheit)
 {
 	// Computing human perception from dew point
@@ -403,7 +403,7 @@ byte DHTesp::computePerception(float temperature, float percentHumidity, bool is
 	return Perception_SevereUncomfy;
 }
 
-//boolean isFahrenheit: True == Fahrenheit; False == Celcius
+//boolean isFahrenheit: True == Fahrenheit; False == Celsius
 float DHTesp::getComfortRatio(ComfortState &destComfortStatus, float temperature, float percentHumidity, bool isFahrenheit)
 {
 	float ratio = 100; //100%

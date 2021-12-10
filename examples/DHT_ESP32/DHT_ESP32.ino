@@ -97,8 +97,8 @@ void tempTask(void *pvParameters) {
  * getTemperature
  * Reads temperature from DHT11 sensor
  * @return bool
- *    true if temperature could be aquired
- *    false if aquisition failed
+ *    true if temperature could be acquired
+ *    false if acquisition failed
 */
 bool getTemperature() {
 	// Reading temperature for humidity takes about 250 milliseconds!

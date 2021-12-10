@@ -1,6 +1,5 @@
-DHTesp [![Build Status](https://github.com/beegee-tokyo/DHTesp/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/beegee-tokyo/DHTesp/actions)
-===
-<!-- [![Build Status](https://travis-ci.com/beegee-tokyo/DHTesp.svg?branch=master)](https://travis-ci.com/beegee-tokyo/DHTesp) -->
+DHT ESP Temperature/Humidity Sensors
+====================================
 
 _**This library is no longer maintained**_
 
@@ -13,7 +12,7 @@ When I searched through Github for DHT libraries, I found a lot of them, some of
 Another problem I found is that many of the available libraries use the same naming (dht.h, dht.cpp), which easily leads to conflicts if different libraries are used for different platforms.    
 
 _**According to users, the library works as well with DHT33 and DHT44 sensors. But as I do not own these sensors, I cannot test and confirm it. However, if you want to use this sensors, you can do so by using `setup(pin, DHTesp::DHT22)` and it should work.
-Please give me feedback in the issues if you successfull use these sensors.
+Please give me feedback in the issues if you successful use these sensors.
 Thank you**_
 
 The library is tested as well on ESP8266 and should work on AVR boards as well.    
@@ -85,7 +84,7 @@ See example _`DHT_Multi.ino`_
 
 _**`DHT_ERROR_t getStatus();`**_    
 - Get last error if reading from the sensor failed. Possible values are:    
-  - ERROR_NONE      no error occured
+  - ERROR_NONE      no error occurred
   - ERROR_TIMEOUT   timeout reading from the sensor    
   - ERROR_CHECKSUM  checksum of received values doesn't match
 
@@ -102,10 +101,10 @@ _**`int8_t getNumberOfDecimalsTemperature();`**_
 - Get number of decimals in the temperature value. For DHT11 this is 0, for other sensors it is 1    
 
 _**`int8_t getLowerBoundTemperature();`**_    
-- Get lower temperature range of the sensor. For DHT11 this is 0 degree Centigrade, for other sensors this is -40 degree Centrigrade    
+- Get lower temperature range of the sensor. For DHT11 this is 0 degree Centigrade, for other sensors this is -40 degree Centigrade    
 
 _**`int8_t getUpperBoundTemperature();`**_    
-- Get upper temperature range of the sensor. For DHT11 this is 50 degree Centigrade, for other sensors this is 125 degree Centrigrade    
+- Get upper temperature range of the sensor. For DHT11 this is 50 degree Centigrade, for other sensors this is 125 degree Centigrade    
 
 _**`int8_t getNumberOfDecimalsHumidity();`**_    
 - Get number of decimals in the humidity value. This is always 0.    
@@ -117,22 +116,22 @@ _**`int8_t getUpperBoundHumidity();`**_
 - Get upper temperature range of the sensor. For DHT11 this is 90 percent, for other sensors this is 100 percent    
 
 _**`static float toFahrenheit(float fromCelcius);`**_    
-- Convert Centrigrade value to Fahrenheit value    
+- Convert Centigrade value to Fahrenheit value    
 
 _**`static float toCelsius(float fromFahrenheit) { return (fromFahrenheit - 32.0) / 1.8; };`**_    
 - Convert Fahrenheit value to Centigrade value    
 
 _**`float computeHeatIndex(float temperature, float percentHumidity, bool isFahrenheit=false);`**_    
-- Compute the heat index. Default temperature is in Centrigrade.    
+- Compute the heat index. Default temperature is in Centigrade.    
 
 _**`float computeDewPoint(float temperature, float percentHumidity, bool isFahrenheit=false);`**_    
-- Compute the dew point. Default temperature is in Centrigrade.    
+- Compute the dew point. Default temperature is in Centigrade.    
 
 _**`float computeAbsoluteHumidity(float temperature, float percentHumidity, bool isFahrenheit=false);`**_    
-- Compute the absolute humidity in g/m³. Default temperature is in Centrigrade.    
+- Compute the absolute humidity in g/m³. Default temperature is in Centigrade.    
 
 _**`float getComfortRatio(ComfortState& destComfStatus, float temperature, float percentHumidity, bool isFahrenheit=false);`**_    
-- Compute the comfort ratio. Default temperature is in Centrigrade. Return values:    
+- Compute the comfort ratio. Default temperature is in Centigrade. Return values:    
 0 -> OK    
 1 -> Too Hot    
 2 -> Too cold    
@@ -144,7 +143,7 @@ _**`float getComfortRatio(ComfortState& destComfStatus, float temperature, float
 6 -> Cold and dry    
 
 _**`byte computePerception(float temperature, float percentHumidity, bool isFahrenheit=false);`**_    
-- Compute the human perception. Default temperature is in Centrigrade. Return values:    
+- Compute the human perception. Default temperature is in Centigrade. Return values:    
 0 -> Dry    
 1 -> Very comfortable    
 2 -> Comfortable    
@@ -155,7 +154,7 @@ _**`byte computePerception(float temperature, float percentHumidity, bool isFahr
 7 -> Severe uncomfortable    
 
 _**`uint8_t getPin(void);`**_    
-- Returns the assigned GPIO for this instance. Usefull when connecting multiple sensors         
+- Returns the assigned GPIO for this instance. Useful when connecting multiple sensors         
 
 Usage
 -----
