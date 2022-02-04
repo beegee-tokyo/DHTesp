@@ -1,7 +1,7 @@
 #include <Arduino.h>
+#include <Ticker.h>
 
-#include "Ticker.h"
-#include "DHTesp.h"
+#include "DHTesp.h" // Click here to get the library: http://librarymanager/All#DHTesp
 
 #ifndef ESP32
 #pragma message(THIS EXAMPLE IS FOR ESP32 ONLY!)

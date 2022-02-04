@@ -1,4 +1,4 @@
-#include "DHTesp.h"
+#include "DHTesp.h" // Click here to get the library: http://librarymanager/All#DHTesp
 
 #ifdef ESP32
 #pragma message(THIS EXAMPLE IS FOR ESP8266 ONLY!)

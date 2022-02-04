@@ -1,5 +1,8 @@
-DHTesp [![Build Status](https://travis-ci.com/beegee-tokyo/DHTesp.svg?branch=master)](https://travis-ci.com/beegee-tokyo/DHTesp)
+DHTesp [![Build Status](https://github.com/beegee-tokyo/DHTesp/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/beegee-tokyo/DHTesp/actions)
 ===
+<!-- [![Build Status](https://travis-ci.com/beegee-tokyo/DHTesp.svg?branch=master)](https://travis-ci.com/beegee-tokyo/DHTesp) -->
+
+_**This library is no longer maintained**_
 
 An Arduino library for reading the DHT family of temperature and humidity sensors.    
 Forked from [arduino-DHT](https://github.com/markruys/arduino-DHT)     
@@ -37,6 +40,7 @@ Changes to the original library:
 - 2019-10-01: Using noInterrupts() & interrupts() instead of cli and sei
 - 2019-10-05: Reduce CPU usage and add decimal part for DHT11 (thanks to Swiftyhu)
 - 2019-10-06: Back to working version by removing the last commit
+- 2021-02-20: Fix negative temperature problem (credits @helijunky)
 
 Features
 --------
