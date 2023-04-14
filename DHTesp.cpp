@@ -336,16 +336,16 @@ float DHTesp::computeDewPoint(float temperature, float percentHumidity, bool isF
 	{
 		temperature = toCelsius(temperature);
 	}
-	double A0 = 373.15 / (273.15 + (double)temperature);
-	double SUM = -7.90298 * (A0 - 1);
-	SUM += 5.02808 * log10(A0);
-	SUM += -1.3816e-7 * (pow(10, (11.344 * (1 - 1 / A0))) - 1);
-	SUM += 8.1328e-3 * (pow(10, (-3.49149 * (A0 - 1))) - 1);
-	SUM += log10(1013.246);
-	double VP = pow(10, SUM - 3) * (double)percentHumidity;
-	double Td = log(VP / 0.61078); // temp var
-	Td = (241.88 * Td) / (17.558 - Td);
-	return isFahrenheit ? toFahrenheit(Td) : Td;
+	double calc_temp = 373.15 / (273.15 + (double)temperature);
+	double calc_sum = -7.90298 * (calc_temp - 1);
+	calc_sum += 5.02808 * log10(calc_temp);
+	calc_sum += -1.3816e-7 * (pow(10, (11.344 * (1 - 1 / calc_temp))) - 1);
+	calc_sum += 8.1328e-3 * (pow(10, (-3.49149 * (calc_temp - 1))) - 1);
+	calc_sum += log10(1013.246);
+	double calc_value = pow(10, calc_sum - 3) * (double)percentHumidity;
+	double calc_dew_temp = log(calc_value / 0.61078); // temp var
+	calc_dew_temp = (241.88 * calc_dew_temp) / (17.558 - calc_dew_temp);
+	return isFahrenheit ? toFahrenheit(calc_dew_temp) : calc_dew_temp;
 }
 
 //boolean isFahrenheit: True == Fahrenheit; False == Celcius
